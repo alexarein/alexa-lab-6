@@ -12,7 +12,15 @@ def encode_password(password):
         encoded += str(new_digit)
     return encoded
 
-
+def decode_password(password):
+    encoded_password = ""
+    for char in password:
+        if char.isdigit():
+            new_digit = (int(char) - 3) % 10
+            encoded_password += str(new_digit)
+        else:
+            encoded_password += char
+    return encoded_password
 
 def main():
     encoded_password = ""
@@ -28,7 +36,10 @@ def main():
             print("Your password has been encoded and stored!")
 
         elif menu_option == "2":
-            # my partner will fill the rest
+            password = input("Enter password to decode:")
+            password = decode_password(password)
+            print("\nYour password:" + password)
+
 
         elif menu_option == "3":
             break
