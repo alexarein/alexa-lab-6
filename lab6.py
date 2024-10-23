@@ -12,12 +12,7 @@ def encode_password(password):
         encoded += str(new_digit)
     return encoded
 
-def decode_password(encoded_password):
-    decoded = ""
-    for digit in encoded_password: # subtract 3 from each digit
-        new_digit = (int(digit) - 3) % 10
-        decoded += str(new_digit)
-    return decoded
+
 
 def main():
     encoded_password = ""
@@ -33,8 +28,7 @@ def main():
             print("Your password has been encoded and stored!")
 
         elif menu_option == "2":
-            decoded_password = decode_password(encoded_password)
-            print(f"The encoded password is {encoded_password}, and the original password is {decoded_password}.")
+            # my partner will fill the rest
 
         elif menu_option == "3":
             break
